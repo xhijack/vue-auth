@@ -5,6 +5,8 @@ module.exports = {
     },
     
     response: function (res) {
-		return res.data.data.token
+        if (res.data.status != 401){
+    		return res.data.data.token
+        }
     }
 };
