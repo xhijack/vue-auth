@@ -5,6 +5,6 @@ module.exports = {
     },
     
     response: function (res) {
-		return res.data.token
+		return res.data.data.token
     }
 };
