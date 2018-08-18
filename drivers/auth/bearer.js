@@ -1,12 +1,16 @@
 module.exports = {
-    
+
     request: function (req, token) {
         this.options.http._setHeaders.call(this, req, {Authorization: 'Bearer ' + token});
     },
-    
+
     response: function (res) {
-        if (res.data.status != 401){
-    		return res.data.data.token
+      try{
+        if (res.data.status != 401) {
+          return res.data.data.token
         }
+      }catch (e) {
+        return "";
+      }
     }
 };
