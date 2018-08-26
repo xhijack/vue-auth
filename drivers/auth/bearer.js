@@ -7,7 +7,7 @@ module.exports = {
     response: function (res) {
       try{
         if (res.data.status != 401) {
-          return res.data.data.token
+          return res.data.token
         }
       }catch (e) {
         return "";
